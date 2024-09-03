@@ -1,4 +1,4 @@
-import { SKILLS, EXTRA_PLATFORMS } from "../constants";
+import { SKILLS, EXTRA_PLATFORMS, SOFT_SKILLS } from "../constants";
 import { motion } from "framer-motion";
 
 const containerVariants = {
@@ -27,9 +27,9 @@ const itemsVariants = {
 const Skills = () => {
     return (
         <div className="container mx-auto" id="skills">
-            <h2 className="mb-12 mt-20 text-center text-4xl font-semibold">
+            <motion.h2 initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="mb-12 mt-20 text-center text-4xl font-semibold">
                 Skills
-            </h2>
+            </motion.h2>
             <motion.div 
                 // Added containerVariants to animate the container
                 initial="hidden" 
@@ -56,7 +56,7 @@ const Skills = () => {
                 ))}
             </motion.div>
 
-            <div className="mt-8 mx-2 flex flex-col rounded-3xl px-4 py-2 lg:px-20 border border-stone-50/20 bg-stone-50/10">
+            <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="mt-8 mx-2 flex flex-col rounded-3xl px-4 py-2 lg:px-20 border border-stone-50/20 bg-stone-50/10">
                 <h3 className="mb-4 text-center text-2xl font-semibold">
                     Additional Platforms
                 </h3>
@@ -67,7 +67,22 @@ const Skills = () => {
                         </div>
                     ))}
                 </div>
-            </div>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="mt-8 mx-2 flex flex-col rounded-3xl px-4 py-2 lg:px-20 border border-stone-50/20 ">
+                <h3 className="mb-4 text-center text-2xl font-semibold">
+                    Soft Skills
+                </h3>
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                    {SOFT_SKILLS.map((skill, index) => (
+                        <div key={index} className="flex items-center space-x-4 py-2">
+                            <img src={skill.image} alt={skill.name} className="w-8 h-8 lg:w-12 lg:h-12" />
+                            <span className="text-md lg:text-lg">{skill.name}</span>
+                        </div>
+                    ))}
+                </div>
+            </motion.div>
+
         </div>
     );
 };
