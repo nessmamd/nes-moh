@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import cpp from "../assets/C++.png"; 
-import openGL from "../assets/openGL.jpeg"; 
+import openGL from "../assets/OpenGL.jpeg"; 
 import sdl from "../assets/sdl.png"; 
 const GameCenter = () => {
     return (
