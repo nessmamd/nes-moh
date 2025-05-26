@@ -19,6 +19,7 @@ import projectImage9 from "../assets/project9.jpeg";
 import toto from "../assets/toto.jpeg";
 
 import one from "../assets/one.png";
+import tesla from "../assets/DSC00994.jpg"; 
 import two from "../assets/two.png";
 import three from "../assets/three.png";
 import rep from "../assets/rep.png";
@@ -26,6 +27,8 @@ import tt from "../assets/tt.png";
 import tp from "../assets/tp.png";
 import tr from "../assets/tr.png";
 import ml from "../assets/ml.png";
+
+
 
 import classImg from "../assets/classImg.jpeg";
 import classImg2 from "../assets/classImg2.jpeg";
@@ -308,11 +311,28 @@ export const EXTRA_PLATFORMS = [
 ]
 
 export const EXPERIENCES = [
-
+  {
+    title: "Firmware Development Intern",
+    company: "AMD",
+    duration: "May 2025 - Present",
+    description:
+      "Developing in C for openSIL x86 firmware......more coming soon !", 
+    images: [rep]
+    
+    },
+  {
+    title: "Machine Vision Software Engineering Intern",
+    company: "Tesla",
+    duration: "January - May 2025",
+    description:
+      "I worked on enhancing an OCR deep learning model to accurately detect key information about batteries, carefully adapting the system to the constraints of the pre-installed camera hardware. In collaboration with my team, I also helped develop a full-stack web application (React, Flask, FTPs, SQL, influxDB) that retrieves and organizes all inline production images and runs machine learning models against it. Beyond software, I designed a vision system collaborating with other teams—connecting camera hardware to deep learning models and computer vision algorithms—evaluating multiple architectures(pyTorch, tensorFlow, and in-house software) to ensure optimal performance. Additionally, I handled the installation and calibration of laser profilers to improve measurement precision within the system.",
+    images: [tesla]
+    
+    },
   {
     title: "Controls Engineering Team Member",
     company: "Schulich Space Rover Team",
-    duration: "Ocotber 2023 - Present",
+    duration: "Ocotber 2023 - May 2024",
     description:
       "I developed firmware scripts using the Phidget library to implement an emergency stop button for resetting the arm's position and solved a critical bug that impacted rover movement across all code. Additionally, I created a polling system to continuously monitor the status of all rover motors, maintained the wiring of the entire rover, and conducted dynamic analysis on rover wheels to develop a PID control system. ",
     images: [two,three,one]
