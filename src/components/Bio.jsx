@@ -42,14 +42,14 @@ const Bio = () => {
                 <motion.h3 initial = {{opacity: 0, y:-20}} whileInView = {{opacity:1, y:0}} transition = {{duration: 1}} className="text-xl font-semibold mb-4">My Resume</motion.h3>
                 <motion.div initial = {{opacity: 0, y:-20}} whileInView = {{opacity:1, y:0}} transition = {{duration: 1}} className="flex flex-col items-center">
                     {/* Inline PDF Viewer */}
-                    <motion.iframe
+{/*                     <motion.iframe
                         initial = {{opacity: 0, y:-20}} whileInView = {{opacity:1, y:0}} transition = {{duration: 1}}
                         src= {resume}  // Adjust the path if necessary
                         width="100%"
                         height="600px"
                         title="Resume Preview"
                         style={{ border: "none" }}
-                    />
+                    /> */}
                     {/* Download Link */}
                     <a
                         href={resume}  // Adjust the path if necessary
