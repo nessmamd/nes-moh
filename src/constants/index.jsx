@@ -18,7 +18,7 @@ import projectImage8 from "../assets/project8.jpeg";
 import projectImage9 from "../assets/project9.jpeg";
 import headset from "../assets/scavengerhunt.png"; 
 import toto from "../assets/toto.jpeg";
-import wiki from "../assets/wikiGame.png"
+import wiki from "../assets/WikiGame.png"
 import one from "../assets/one.png";
 import tesla from "../assets/DSC00994.jpg"; 
 import two from "../assets/two.png";
