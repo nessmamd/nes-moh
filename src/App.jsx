@@ -7,7 +7,7 @@ import Skills from "./components/Skills"
 import WorkExperience from "./components/WorkExperience"
 import Contact from "./components/Contact"
 import EducationSection from './components/EducationSection'
-import GameCenter from './components/GameCenter'
+// import GameCenter from './components/GameCenter'
 import Footer from './components/Footer'
 
 const App = () => {
@@ -24,7 +24,7 @@ const App = () => {
         <Skills /> 
         <WorkExperience/>
         <EducationSection />
-        <GameCenter/>
+        {/* <GameCenter/> */}
         <Contact /> 
         <Footer />
         

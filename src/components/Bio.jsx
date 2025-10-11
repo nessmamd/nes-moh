@@ -1,5 +1,5 @@
 import { BIO } from "../constants";
-import resume from "../assets/nessma_resume2.pdf";
+import resume from "../assets/NessmaResume.pdf";
 import port from "../assets/port.pdf";
 import ss from "../assets/port.pdf";
 import { motion } from "framer-motion";
