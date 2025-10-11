@@ -12,12 +12,13 @@ import projectImage2 from "../assets/project2.jpeg";
 import projectImage3 from "../assets/project3.jpeg";
 import projectImage4 from "../assets/project4.jpeg";
 import projectImage5 from "../assets/project5.jpeg";
-import projectImage6 from "../assets/project6.jpeg";
+import projectImage6 from "../assets/RobotGame.png";
 import projectImage7 from "../assets/project7.jpeg";
 import projectImage8 from "../assets/project8.jpeg";
 import projectImage9 from "../assets/project9.jpeg";
+import headset from "../assets/scavengerhunt.png"; 
 import toto from "../assets/toto.jpeg";
-
+import wiki from "../assets/wikiGame.png"
 import one from "../assets/one.png";
 import tesla from "../assets/DSC00994.jpg"; 
 import two from "../assets/two.png";
@@ -58,7 +59,7 @@ export const NAVIGATION_LINKS = [
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#work" },
   { label: "Education", href: "#education" }, //here include things youve done in class 
-  { label: "Game Center", href: "#gamecenter" }, 
+  // { label: "Game Center", href: "#gamecenter" }, 
   { label: "Contact", href: "#contact" },
 ];
 
@@ -66,7 +67,7 @@ export const HERO = {
   name: "NESSMA MOHDY",
   greet: "Hello there! 👋🏻",
   description:
-    "I am a committed Software and Mechatronics student with a deep enthusiasm for everything connected to electronics and coding. I hope to work on cars, airplanes, or chip development.",
+    "I am a committed Software and Mechatronics student with a deep enthusiasm for everything connected to electronics and coding. I hope to work on cars, airplanes, or robots.",
 };
 
 export const CLASSES = [
@@ -135,6 +136,14 @@ export const PROJECTS = [
   },
   {
     id: 3,
+    name: "Scavanger hunt",
+    description:
+      "This is a haptic robotic arm powered with NVIDIA augmented reality (AR) glasses to manuver around a video game where users select the right objects that are listed.",
+    image: headset,
+    githubLink: "https://github.com/nessmamd/scavenger-hunt",
+  },
+  {
+    id: 4,
     name: "Flight Simulator",
     description:
       "An application, built with Java, MySQL, and Maven, is designed for a single airline company, enabling users and agents to browse, select, and manage flights, seats, and insurance. Registered users gain benefits, airline agents and admins manage various tasks, with a focus on systematic design and adaptability to evolving requirements.",
@@ -142,7 +151,7 @@ export const PROJECTS = [
     githubLink: "https://github.com/user/task-management-tool",
   },
   {
-    id: 4,
+    id: 5,
     name: "LongTimeNoCrypto",
     description:
       "Welcome to the 'Long Time No...' repository, a unique cryptocurrency where secret messages you wish you had sent are turned into digital assets. The project features encrypted message handling with Hill cipher and SHA256, a Merkle tree for validation, and includes both client and server-side code for secure, peer-to-peer transactions.",
@@ -150,7 +159,7 @@ export const PROJECTS = [
     githubLink: "https://github.com/nessmamd/longTimeNoCrypto",
   },
   {
-    id: 5,
+    id: 6,
     name: "LED Controller",
     description:
       "LEDController is a microcontroller-based app that manages LED states (ON/OFF, blinking) with push buttons and captures data for analysis using Python. Key features include ADC conversion, system clock adjustment, UART communication, interrupt-driven I/O handling, and precise time delays with Timer interrupts.",
@@ -158,15 +167,15 @@ export const PROJECTS = [
     githubLink: "https://github.com/nessmamd/LEDController",
   },
   {
-    id: 6,
-    name: "Simple Processor",
+    id: 7,
+    name: "2048 Solver",
     description:
-      "The project aims to design and simulate a basic processor in Verilog, integrating components such as an ALU, control unit, and registers into a simple RISC architecture. It involves creating these components, assembling them into a functional processor, and using Verilog simulation tools to ensure accurate operation and instruction execution.",
+      "Solving 2048 the online and mobile game with cool models and training. Check out the repo !",
     image: projectImage6,
-    githubLink: "https://github.com/nessmamd/VerliProcessorn",
+    githubLink: "https://github.com/nessmamd/2048Solver",
   },
   {
-    id: 7,
+    id: 8,
     name: "Neural Processer FPGA",
     description:
       "Utilized PyTorch to train a neural network, extracting weights for further application in custom neural network development using C++. Employed Verilog on the FPGA DE10-Lite board to enhance neural network creation efficiency and eliminate iterative processes, resulting in accelerated development.",
@@ -174,7 +183,7 @@ export const PROJECTS = [
     githubLink: "https://github.com/nessmamd/neuralfpga",
   },
   {
-    id: 8,
+    id: 9,
     name: "Lotion",
     description:
       "A Notion-like application named Lotion with HTML, CSS, and React.",
@@ -182,7 +191,7 @@ export const PROJECTS = [
     githubLink: "https://github.com/nessmamd/lotions",
   },
   {
-    id: 9,
+    id: 10,
     name: "Animal Shelter",
     description:
       "Ever had to manage a centre of pets that require medicine, certain care, and certain foods given a limited amount of staff? This java program uses a clean GUI and an algorithm to sort through a database to create the perfect schedule to account for all pet needs.",
@@ -190,12 +199,20 @@ export const PROJECTS = [
     githubLink: "https://github.com/IshaHaider/ScheduleBuilder",
   },
   {
-    id: 10,
+    id: 11,
     name: "Braille to English ",
     description:
       "A small terminal line program that converts braille to english or english to braille",
     image: toto,
     githubLink: "https://github.com/nessmamd/btoe",
+  },
+  {
+    id: 12,
+    name: "Wikipedia Game",
+    description:
+      "A small terminal line program that converts braille to english or english to braille",
+    image: wiki,
+    githubLink: "https://github.com/nessmamd/Wikifind",
   },
   
   
