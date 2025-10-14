@@ -10,7 +10,7 @@ import {
 import projectImage1 from "../assets/project1.jpeg";
 import projectImage2 from "../assets/project2.jpeg";
 import projectImage3 from "../assets/project3.jpeg";
-import projectImage4 from "../assets/project4.jpeg";
+import projectImage4 from "../assets/project4_new.jpeg";
 import projectImage5 from "../assets/project5.jpeg";
 import projectImage6 from "../assets/RobotGame.png";
 import projectImage7 from "../assets/project7.jpeg";
