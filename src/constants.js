@@ -83,7 +83,7 @@ export const SKILLS = [
   { name: "Rust", experience: "1+ years", icon: "SiRust", category: "firmware", proficiency: 80 },
   { name: "RTOS", experience: "1+ years", icon: "SiLinux", category: "firmware", proficiency: 80 },
   { name: "Firmware / UEFI", experience: "1+ years", icon: "SiIntel", category: "firmware", proficiency: 75 },
-  { name: "CAN / SPI / UART / UDS", experience: "2+ years", icon: "SiCanva", category: "firmware", proficiency: 85 },
+  { name: "CAN / SPI / UART / UDS", experience: "2+ years", icon: "BiChip", category: "firmware", proficiency: 85 },
   { name: "Cross-compilation / Multithreading", experience: "2+ years", icon: "BiChip", category: "firmware", proficiency: 85 },
 
   // Full Stack
