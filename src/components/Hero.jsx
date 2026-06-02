@@ -1,26 +1,28 @@
-import {HERO} from "../constants"
-import carlImg from "../assets/carl.jpeg"
-import {motion} from "framer-motion"
+import girlImg from '../assets/girl.png'
 
 const Hero = () => {
-    return (
-        <section className = "flex min-h-screen flex-wrap items-center"> 
-            <motion.div  initial = {{opacity: 0, x: -50}} animate = {{opacity: 1, x:0}} transition = {{ duration: 1}} className = "w-full md:w-1/2">
-                <h2 className = "my-8 p-2 text-4xl font-bold md:text-5xl lg:text-[7rem]">
-                    {HERO.name}
-                </h2>
-                <p className = "p-2 text-3xl tracking-tighter lg:text-4xl">
-                    {HERO.greet}
-                </p>
-                <p className = "mb-8 p-2 text-xl">
-                    {HERO.description}
-                </p>
-            </motion.div>
-            <motion.div initial = {{opacity: 0, scale: 0.8}} animate = {{opacity:1, scale:1}} transition = {{duration: 1}}className = "w-full md:w-1/2 lg:p-8">
-                <div className = "flex justify-center"> <motion.img initial = {{opacity: 0}} animate = {{opacity: 1}} transition = {{duration: 1}} src = {carlImg} width = {550} height = {550} alt= "Nessma Mohdy" className = "rounded-3xl"></motion.img> </div>
-            </motion.div>
-        </section>
-    )
+  return (
+    <section id="hero">
+      <div className="hero-left">
+        <p className="hero-tag">software · mechatronics · embedded · ml</p>
+        <h1 className="hero-name">NESSMA<br />MOHDY</h1>
+        <p className="hero-greet">Hello there! 👋🏻</p>
+        <p className="hero-desc">
+         I work at the intersection of embedded systems, machine learning, and the kind of software that touches real hardware. Currently studying Software & Mechatronics Engineering at the University of Calgary, pursuing internships in embedded, ML/AI, and performance-critical systems.
+        </p>
+      </div>
+
+      <div className="hero-right">
+        <img
+          src={girlImg}
+          alt="curly hair girl illustration"
+          className="hero-girl-img"
+        />
+      </div>
+
+      <p className="scroll-hint">scroll</p>
+    </section>
+  )
 }
 
 export default Hero

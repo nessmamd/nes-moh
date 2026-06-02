@@ -1,90 +1,86 @@
-import { SKILLS, EXTRA_PLATFORMS, SOFT_SKILLS } from "../constants";
-import { motion } from "framer-motion";
+import { SKILLS, EXTRA_PLATFORMS } from '../constants'
+import * as RiIcons from 'react-icons/ri'
+import * as BiIcons from 'react-icons/bi'
+import * as FaIcons from 'react-icons/fa6'
+import * as SiIcons from 'react-icons/si'
 
-const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-        opacity: 1, 
-        y: 0, 
-        transition: {
-            duration: 1, 
-            staggerChildren: 0.5 // Corrected spelling
-        }, 
-    }, 
+const getIconComponent = (iconName) => {
+  if (iconName.startsWith('Ri')) return RiIcons[iconName]
+  if (iconName.startsWith('Bi')) return BiIcons[iconName]
+  if (iconName.startsWith('Fa')) return FaIcons[iconName]
+  if (iconName.startsWith('Si')) return SiIcons[iconName]
+  return null
 }
 
-const itemsVariants = {
-    hidden: {
-        opacity: 0, x: -20
-    }, 
-    visible: { 
-        opacity: 1, 
-        x: 0, 
-        transition: { duration: 0.5 } 
-    }
+const CATEGORY_COLORS = {
+  frontend: { label: 'Frontend', color: '#e879a3' },
+  backend: { label: 'Backend', color: '#b19cd9' },
+  firmware: { label: 'Firmware', color: '#d8a5d4' },
+  tools: { label: 'Tools', color: '#a8a9d4' },
+  ml: { label: 'ML/AI', color: '#c99dd0' },
+  fullstack: { label: 'Full Stack', color: '#7aa2f7' }, // add this
 }
 
 const Skills = () => {
-    return (
-        <div className="container mx-auto" id="skills">
-            <motion.h2 initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="mb-12 mt-20 text-center text-4xl font-semibold">
-                Skills
-            </motion.h2>
-            <motion.div 
-                // Added containerVariants to animate the container
-                initial="hidden" 
-                whileInView="visible"  
-                variants={containerVariants}
-                viewport={{ once: true }} 
-                
-                className="mx-2 flex flex-col rounded-3xl px-4 py-2 lg:px-20 border border-stone-50/30"
-            >
-                {SKILLS.map((skill, index) => (
-                    <motion.div 
-                        variants={itemsVariants} 
-                        key={index} 
-                        className={`py-6 flex items-center justify-between ${index !== SKILLS.length - 1 ? "border-b border-stone-50/30" : ""}`}
-                    >
-                        <div className="flex items-center">
-                            {skill.icon}
-                            <h3 className="px-6 text-lg lg:text-2xl">{skill.name}</h3>
-                        </div>
-                        <div className="text-md font-semibold lg:text-xl">
-                            <span>{skill.experience}</span>
-                        </div>
-                    </motion.div>
-                ))}
-            </motion.div>
+  // Group skills by category
+  const groupedSkills = SKILLS.reduce((acc, skill) => {
+    if (!acc[skill.category]) acc[skill.category] = []
+    acc[skill.category].push(skill)
+    return acc
+  }, {})
 
-            <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="mt-8 mx-2 flex flex-col rounded-3xl px-4 py-2 lg:px-20 border border-stone-50/20 bg-stone-50/10">
-                <h3 className="mb-4 text-center text-2xl font-semibold">
-                    Additional Platforms
-                </h3>
-                <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-                    {EXTRA_PLATFORMS.map((platform, index) => (
-                        <div key={index} className="flex items-center justify-center py-2">
-                            <span className="text-md lg:text-lg">{platform.name}</span>
-                        </div>
-                    ))}
-                </div>
-            </motion.div>
+  return (
+    <section id="skills" className="section-wrap" style={{ borderTop: '1px solid var(--dimmer)' }}>
+      <div className="reveal">
+        <p className="section-label">tools &amp; languages</p>
+        <h2 className="section-title">skills</h2>
+      </div>
 
-            <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="mt-8 mx-2 flex flex-col rounded-3xl px-4 py-2 lg:px-20 border border-stone-50/20 ">
-                <h3 className="mb-4 text-center text-2xl font-semibold">
-                    Soft Skills
-                </h3>
-                <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-                    {SOFT_SKILLS.map((skill, index) => (
-                        <div key={index} className="flex items-center space-x-4 py-2">
-                            <img src={skill.image} alt={skill.name} className="w-8 h-8 lg:w-12 lg:h-12" />
-                            <span className="text-md lg:text-lg">{skill.name}</span>
-                        </div>
-                    ))}
-                </div>
-            </motion.div>
+      <div className="skills-categories reveal">
+        {Object.entries(groupedSkills).map(([category, skills]) => (
+          <div key={category} className="skill-category">
+            <h3 className="category-title" style={{ color: CATEGORY_COLORS[category]?.color }}>
+              {CATEGORY_COLORS[category]?.label}
+            </h3>
+            <div className="skill-grid">
+              {skills.map((skill, i) => {
+                const IconComponent = getIconComponent(skill.icon)
+                return (
+                  <div key={i} className="skill-card">
+                    <div className="skill-icon">
+                      {IconComponent && <IconComponent size={32} />}
+                    </div>
+                    <div className="skill-info">
+                      <p className="skill-name">{skill.name}</p>
+                      <div className="skill-bar">
+                        <div 
+                          className="skill-fill" 
+                          style={{ 
+                            width: `${skill.proficiency}%`,
+                            backgroundColor: CATEGORY_COLORS[category]?.color
+                          }}
+                        />
+                      </div>
+                      <p className="skill-level">{skill.proficiency}%</p>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
 
+      <div className="skills-extras reveal" style={{ marginTop: '2rem' }}>
+        <p className="section-label" style={{ marginBottom: '1rem' }}>also familiar with</p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+          {EXTRA_PLATFORMS.map((platform, i) => (
+            <span className="extra-chip" key={i}>{platform.name}</span>
+          ))}
         </div>
-    );
-};
+      </div>
+    </section>
+  )
+}
 
-export default Skills;
+export default Skills
