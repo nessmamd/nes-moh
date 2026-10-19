@@ -4,7 +4,7 @@ const Contact = () => {
       <div className="contact-inner reveal">
         <h2 className="contact-heading">let's<br />connect</h2>
         <p className="contact-sub">
-          Open to software, embedded systems, and ML/AI internships.<br />
+          Seeking full-time software engineering roles in embedded systems, robotics, and ML/AI.
         </p>
         <div className="contact-links">
           <a href="mailto:nessmamo@outlook.com" className="contact-cta">email me</a>

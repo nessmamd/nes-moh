@@ -5,10 +5,11 @@ const Hero = () => {
     <section id="hero">
       <div className="hero-left">
         <p className="hero-tag">software · mechatronics · embedded · ml</p>
+        <p className="job-search-badge"><span aria-hidden="true" /> seeking full-time opportunities</p>
         <h1 className="hero-name">NESSMA<br />MOHDY</h1>
         <p className="hero-greet">Hello there! 👋🏻</p>
         <p className="hero-desc">
-          I work at the intersection of embedded systems, machine learning, and the kind of software that touches real hardware. Software &amp; Mechatronics Engineering at the University of Calgary, currently a Platform Software Intern at Figure AI, previously at Tesla and AMD.
+          I’m a Software &amp; Mechatronics Engineering student at the University of Calgary, currently a Platform Software Intern at Figure AI, with previous experience at Tesla and AMD. I’m looking for full-time software engineering roles focused on embedded systems, robotics, and machine learning.
         </p>
       </div>
 
