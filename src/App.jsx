@@ -97,11 +97,12 @@ const App = () => {
     resize()
     init()
     draw()
-    window.addEventListener('resize', () => { resize(); init() })
+    const onResize = () => { resize(); init() }
+    window.addEventListener('resize', onResize)
 
     return () => {
       cancelAnimationFrame(animId)
-      window.removeEventListener('resize', resize)
+      window.removeEventListener('resize', onResize)
     }
   }, [])
 

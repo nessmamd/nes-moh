@@ -17,7 +17,8 @@ const TECH_CATEGORIES = {
   'FPGA': 'tools', 'Verilog': 'tools', 'Swing': 'tools', 'Algorithms': 'tools',
   // ML/Data
   'Machine Learning': 'ml', 'PyTorch': 'ml', 'ChatGPT': 'ml', 'AR': 'ml', 'Robotics': 'ml',
-  'NVIDIA': 'ml',
+  'NVIDIA': 'ml', 'ONNX Runtime': 'ml', 'Gymnasium': 'ml',
+  'Compilers': 'tools', 'x86-64 Assembly': 'backend', 'Networking': 'tools', 'WebSocket': 'tools', 'Linux': 'tools',
 }
 
 const getTechCategory = (tech) => {
@@ -37,7 +38,7 @@ const Projects = () => {
           <div className="project-card" key={project.id}>
             <div className="card-line"></div>
             <span className="card-sym">{SYMBOLS[i % SYMBOLS.length]}</span>
-            <span className="card-arrow">↗</span>
+            {project.githubLink && <span className="card-arrow">↗</span>}
             <h3 className="card-title">{project.name}</h3>
             <p className="card-desc">{project.description}</p>
             {project.tech && (
@@ -47,14 +48,18 @@ const Projects = () => {
                 ))}
               </div>
             )}
-            <a
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="card-link"
-            >
-              view on github
-            </a>
+            {project.githubLink ? (
+              <a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-link"
+              >
+                view on github
+              </a>
+            ) : (
+              <span className="card-link card-link--private">code available on request</span>
+            )}
           </div>
         ))}
       </div>

@@ -1,25 +1,31 @@
 import { SKILLS, EXTRA_PLATFORMS } from '../constants'
-import * as RiIcons from 'react-icons/ri'
-import * as BiIcons from 'react-icons/bi'
-import * as FaIcons from 'react-icons/fa6'
-import * as SiIcons from 'react-icons/si'
+import { RiReactjsLine } from 'react-icons/ri'
+import { BiChip, BiLogoCPlusPlus, BiLogoPostgresql } from 'react-icons/bi'
+import { FaJs, FaHtml5, FaAws } from 'react-icons/fa6'
+import {
+  SiPytorch, SiOnnx, SiNvidia, SiOpenai, SiTensorflow, SiPython, SiRos, SiC, SiRust,
+  SiLinux, SiIntel, SiNodedotjs, SiDocker, SiKubernetes, SiGithubactions, SiGit,
+} from 'react-icons/si'
 
-const getIconComponent = (iconName) => {
-  if (iconName.startsWith('Ri')) return RiIcons[iconName]
-  if (iconName.startsWith('Bi')) return BiIcons[iconName]
-  if (iconName.startsWith('Fa')) return FaIcons[iconName]
-  if (iconName.startsWith('Si')) return SiIcons[iconName]
-  return null
+// Only the icons the skills list uses, so the whole icon packs aren't bundled
+const ICONS = {
+  RiReactjsLine, BiChip, BiLogoCPlusPlus, BiLogoPostgresql, FaJs, FaHtml5, FaAws,
+  SiPytorch, SiOnnx, SiNvidia, SiOpenai, SiTensorflow, SiPython, SiRos, SiC, SiRust,
+  SiLinux, SiIntel, SiNodedotjs, SiDocker, SiKubernetes, SiGithubactions, SiGit,
 }
+const getIconComponent = (iconName) => ICONS[iconName] || null
 
 const CATEGORY_COLORS = {
   frontend: { label: 'Frontend', color: '#e879a3' },
   backend: { label: 'Backend', color: '#b19cd9' },
-  firmware: { label: 'Firmware', color: '#d8a5d4' },
+  firmware: { label: 'Embedded / Systems', color: '#d8a5d4' },
   tools: { label: 'Tools', color: '#a8a9d4' },
   ml: { label: 'ML/AI', color: '#c99dd0' },
   fullstack: { label: 'Full Stack', color: '#7aa2f7' }, // add this
 }
+
+// Lead with the embedded/systems work that the resume is built around
+const CATEGORY_ORDER = ['firmware', 'ml', 'fullstack', 'tools', 'frontend', 'backend']
 
 const Skills = () => {
   // Group skills by category
@@ -37,7 +43,7 @@ const Skills = () => {
       </div>
 
       <div className="skills-categories reveal">
-        {Object.entries(groupedSkills).map(([category, skills]) => (
+        {CATEGORY_ORDER.filter((c) => groupedSkills[c]).map((category) => [category, groupedSkills[category]]).map(([category, skills]) => (
           <div key={category} className="skill-category">
             <h3 className="category-title" style={{ color: CATEGORY_COLORS[category]?.color }}>
               {CATEGORY_COLORS[category]?.label}
@@ -52,16 +58,7 @@ const Skills = () => {
                     </div>
                     <div className="skill-info">
                       <p className="skill-name">{skill.name}</p>
-                      <div className="skill-bar">
-                        <div 
-                          className="skill-fill" 
-                          style={{ 
-                            width: `${skill.proficiency}%`,
-                            backgroundColor: CATEGORY_COLORS[category]?.color
-                          }}
-                        />
-                      </div>
-                      <p className="skill-level">{skill.proficiency}%</p>
+                      <p className="skill-level">{skill.experience}</p>
                     </div>
                   </div>
                 )

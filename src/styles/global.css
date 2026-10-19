@@ -604,4 +604,27 @@ footer a:hover { color: white; }
   .tl-header { flex-direction: column; gap: 0.25rem; }
   .tl-logo { width: 28px; height: 28px; font-size: 0.6rem; transform: translateX(-10px); }
   .tl-dot { transform: translateX(11px); }
+  .nav-links { display: none; }
+  nav .mobile-menu-btn { display: block; }
+}
+
+/* ── MOBILE MENU BUTTON (hidden on desktop) ── */
+.mobile-menu-btn {
+  display: none; background: none; border: none; color: white;
+  font-size: 1.2rem; cursor: none;
+}
+
+/* ── EXPERIENCE BULLETS + TECH ── */
+.tl-bullets { list-style: none; }
+.tl-bullets li { position: relative; padding-left: 1.2rem; margin-bottom: 0.6rem; }
+.tl-bullets li::before { content: '›'; position: absolute; left: 0; color: var(--dim); }
+.tl-tech { margin-top: 1rem; margin-bottom: 0; }
+
+/* ── PROJECTS WITHOUT A PUBLIC REPO ── */
+.card-link--private { border-bottom-style: dashed; }
+
+/* ── TOUCH DEVICES: no custom cursor ── */
+@media (hover: none) {
+  body, .project-card, .mobile-menu-btn { cursor: auto; }
+  #cursor { display: none; }
 }

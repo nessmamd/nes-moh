@@ -24,7 +24,7 @@ const Navbar = () => {
       </a>
 
       {/* Desktop */}
-      <ul className="nav-links" style={{ display: 'flex' }}>
+      <ul className="nav-links">
         {NAVIGATION_LINKS.map((item, i) => (
           <li key={i}>
             <a href={item.href} onClick={(e) => handleLinkClick(e, item.href)}>
@@ -37,11 +37,7 @@ const Navbar = () => {
       {/* Mobile toggle */}
       <button
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        style={{
-          display: 'none',
-          background: 'none', border: 'none', color: 'white',
-          cursor: 'none', fontSize: '1.2rem'
-        }}
+        aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
         className="mobile-menu-btn"
       >
         {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
