@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Syne:wght@400;700;800&display=swap');
 
 :root {
   --bg: #000;
@@ -14,7 +14,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--fg);
-  font-family: 'Space Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   cursor: none;
   overflow-x: hidden;
 }
@@ -220,7 +220,7 @@ nav {
   display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;
 }
 .tech-tag {
-  font-size: 0.6rem; font-family: monospace;
+  font-size: 0.6rem; font-family: 'JetBrains Mono', monospace;
   border: 1px solid var(--dim); border-radius: 3px; padding: 0.25rem 0.5rem;
   color: var(--dim); text-transform: uppercase; letter-spacing: 0.05em;
   transition: all 0.2s;
