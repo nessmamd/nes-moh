@@ -7,9 +7,11 @@ import ssrtLogo from '../assets/ssrt.png'
 import ucalLogo from '../assets/cal.png'
 import techStartLogo from '../assets/tech_start_ucalgary_logo.jpeg'
 import luminousLogo from '../assets/plant-growing-graphic-clipart-design-free-png.webp'
+import figureLogo from '../assets/figure-logo.svg'
 
 // Logos are bundled locally (the old Discord CDN links expired in June 2026)
 const LOGOS = {
+  "Figure AI": { bg: "#000000", icon: figureLogo },
   Tesla: { bg: "#000000", icon: teslaLogo },
   AMD: { bg: "#1f1f1f", icon: amdLogo },
   BMW: { bg: "#1a1a2e", icon: bmwLogo },
@@ -130,7 +132,23 @@ const WorkExperience = () => {
                 </div>
               </div>
 
-              <div className="tl-expand" style={{ maxHeight: isOpen ? '1600px' : '0' }}>
+              <div className="tl-expand" style={{ maxHeight: isOpen ? '2400px' : '0' }}>
+                {exp.resourceLinks && (
+                  <div className="tl-resource-links">
+                    {exp.resourceLinks.map((link) => (
+                      <a
+                        key={link.url}
+                        className="card-link"
+                        href={link.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {link.label} ↗
+                      </a>
+                    ))}
+                  </div>
+                )}
                 {exp.bullets ? (
                   <ul className="tl-desc tl-bullets">
                     {exp.bullets.map((b, j) => <li key={j}>{b}</li>)}
@@ -154,6 +172,19 @@ const WorkExperience = () => {
                         onClick={(e) => openLightbox(e, exp.images, j)}
                       />
                     ))}
+                  </div>
+                )}
+                {exp.youtubeVideoId && (
+                  <div className="tl-video-wrap">
+                    <iframe
+                      className="tl-video"
+                      src={`https://www.youtube-nocookie.com/embed/${exp.youtubeVideoId}`}
+                      title={`${exp.company} video`}
+                      loading="lazy"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
                   </div>
                 )}
               </div>

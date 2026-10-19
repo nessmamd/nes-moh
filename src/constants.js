@@ -127,19 +127,20 @@ export const EXPERIENCES = [
     title: "Platform Software Intern",
     company: "Figure AI",
     duration: "September - December 2026",
-    bullets: [
-      "Owned end-to-end teleoperation integration across Linux applications and system services, validating 5G, Wi-Fi, and wired communication, RTOS scheduling, and SDK integration using C++ and Python.",
-      "Root-caused integration failures using journalctl, ip, nmcli, and script-driven analysis of tcpdump captures, achieving 100% nightly test passes.",
-      "Developed an end-to-end latency measurement and analysis pipeline spanning robot-to-teleoperation communication and peripheral devices, including hand-tracking hardware, IMUs, and Meta Quest headsets.",
-      "Correlated frame-level image data with MCAP recordings to characterize latency and identify performance bottlenecks across the system.",
-      "Built a distributed Wi-Fi testing system using configurable routers to dynamically enable and disable connectivity, enabling controlled validation of teleoperation behavior under varying network conditions.",
-    ],
+    youtubeVideoId: "pfAh5oQDPDM",
     tech: ["C++", "Python", "Linux", "RTOS", "MCAP", "tcpdump"],
   },
   {
     title: "Vehicle Software Intern",
     company: "Tesla",
     duration: "January - August 2026",
+    youtubeVideoId: "V77jIMi21Vs",
+    resourceLinks: [
+      {
+        label: "California Air Resources Board — OBD-II systems fact sheet",
+        url: "https://ww2.arb.ca.gov/resources/fact-sheets/board-diagnostic-ii-obd-ii-systems-fact-sheet",
+      },
+    ],
     bullets: [
       "Developed a layered automotive diagnostic communication stack following the OSI model, implementing SAE J1979/ISO 15031-5 OBD-II over ISO 15765-2 (ISO-TP) and CAN (DoCAN) through a proxy architecture scalable across vehicle platforms.",
       "Integrated the stack on an RTOS to meet the 50 ms P2 tester timing budget and validated reliability through fuzz testing and long-duration soak tests.",
