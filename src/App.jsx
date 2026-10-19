@@ -5,7 +5,6 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
 import Bio from './components/Bio'
-import Skills from './components/Skills'
 import WorkExperience from './components/WorkExperience'
 import EducationSection from './components/EducationSection'
 import Contact from './components/Contact'
@@ -119,7 +118,6 @@ const App = () => {
       <Hero />
       <Projects />
       <Bio />
-      <Skills />
       <WorkExperience />
       <EducationSection />
       <Contact />
